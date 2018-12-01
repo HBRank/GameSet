@@ -33,14 +33,13 @@ namespace Proyecto1._0
         {
 
         }
-        //
-        //Primera casilla
-        //
+
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            matrz[0, 0] = matrz[0, 0] + 1;
             if (p == 1)
-            {      
+            {
+                matrz[0, 0] = matrz[0, 0] + 1;
                 button1.BackColor = Color.Red;
                 if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
                 else
@@ -51,6 +50,7 @@ namespace Proyecto1._0
             }
             else
             {
+                matrz[0, 0] = matrz[0, 0] + 1;
                 button1.BackColor = Color.Blue;
                 if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
                 else
@@ -62,70 +62,61 @@ namespace Proyecto1._0
             }
        
             }
-        private void button13_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            matrz[0, 0] = matrz[0, 0] + 2;
-            matrz[0, 1] = matrz[0, 1] + 8;
+            
             if (p == 1)
             {
-                button13.BackColor = Color.Red;
-                if (matrz[0, 0] == 15)
-                {
-                    panel1.Visible = true; panel1.BackColor = Color.DarkRed;
+                
+                matrz[0, 1] = matrz[0, 1] + 1;
+                button2.BackColor = Color.Red;
+                if (matrz[0, 1] == 7) {
+                    if (button13.BackColor == Color.Red || button13.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkRed;
+                    }
+                    else
+                    {
+                        P1Score++;
+                        p = 0;
+                    }
                 }
                 else
                 {
                     P1Score++;
                     p = 0;
                 }
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; p = 1; }
             }
             else
             {
-                button13.BackColor = Color.Blue;
-               
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
+                matrz[0, 1] = matrz[0, 1] + 1;
+                button2.BackColor = Color.Blue;
+                if (matrz[0, 1] == 7) {
+                    if (button13.BackColor == Color.Red || button13.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkBlue;
+                    }
+                    else
+                    {
+                        P1Score++;
+                        p = 1;
+                    }
+                }
                 else
                 {
                     P1Score++;
                     p = 1;
                 }
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue; p = 0; }
-            }
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            matrz[0, 0] = matrz[0, 0] + 4;
-            matrz[1, 0] = matrz[1, 0] + 1;
-            if (p == 1)
-            {  
-                button4.BackColor = Color.Red;
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
-                else
-                {
-                    P1Score++;
-                    p = 0;
-                }
-                if (matrz[1, 0] == 15) { panel4.Visible = true; panel4.BackColor = Color.DarkRed; p = 1; }
 
             }
-            else
-            {
-                button4.BackColor = Color.Blue;
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
-                else
-                {
-                    P1Score++;
-                    p = 1;
-                }
-                if (matrz[1, 0] == 15 ) { panel4.Visible = true; panel4.BackColor = Color.DarkBlue; p = 0; }
-            }
         }
+
         private void button18_Click(object sender, EventArgs e)
         {
-            matrz[0, 0] = matrz[0, 0] + 8;
+            
             if (p == 1)
             {
+                matrz[0, 0] = matrz[0, 0] + 8;
                 button18.BackColor = Color.Red;
                 if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
                 else
@@ -136,6 +127,7 @@ namespace Proyecto1._0
             }
             else
             {
+                matrz[0, 0] = matrz[0, 0] + 8;
                 button18.BackColor = Color.Blue;
                 if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
                 else
@@ -146,141 +138,172 @@ namespace Proyecto1._0
 
             }
         }
-        //
-        //Segunda Casilla.
-        //
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button13_Click(object sender, EventArgs e)
         {
-            matrz[0, 1] = matrz[0, 1] + 1;
             if (p == 1)
             {
-                button2.BackColor = Color.Red;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed;
-                    }
-                    else
-                    {
-                        P1Score++;
-                        p = 0;
-                    }
+                
+                matrz[0, 0] = matrz[0, 0] + 2;
+                button13.BackColor = Color.Red;
+                if (matrz[0, 0] == 15) {
+                    panel1.Visible = true; panel1.BackColor = Color.DarkRed;
                 }
+                else
+                {
+                    P1Score++;
+                    p = 0;
+                }
+                if (matrz[0, 1] == 7) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; p = 1; }
+
+
+            }
             else
             {
-                button2.BackColor = Color.Blue;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue; }
-                    else
-                    {
-                        P1Score++;
-                        p = 1;
-                    }
+                
+                matrz[0, 0] = matrz[0, 0] + 2;
+                button13.BackColor = Color.Blue;
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
+                else
+                {
+                    P1Score++;
+                    p = 1;
                 }
+                if (matrz[0, 1] == 7) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue; p = 0; }
+
+            }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (p == 1)
+            {
+                matrz[0, 0] = matrz[0, 0] + 4;
+                button4.BackColor = Color.Red;
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
+                else
+                {
+                    P1Score++;
+                    p = 0;
+                }
+                if (matrz[0, 0] == 15 && panel1.Visible != true) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; p = 1; }
+               
+            }
+            else
+            {
+                matrz[0, 0] = matrz[0, 0] + 4;
+                button4.BackColor = Color.Blue;
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; }
+                else
+                {
+                    P1Score++;
+                    p = 1;
+                }
+                if (matrz[0, 0] == 15 && panel1.Visible != true) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; p = 1; }
+            }
+        }
+
         private void button19_Click(object sender, EventArgs e)
         {
-            matrz[0, 1] = matrz[0, 1] + 2;
-            matrz[0, 2] = matrz[0, 2] + 8;
             if (p == 1)
             {
+               
+                matrz[0, 1] = matrz[0, 1] + 2;
                 button19.BackColor = Color.Red;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; }
+                if (matrz[0, 1] == 7) {
+                    if (button13.BackColor == Color.Red || button13.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkRed;
+                    }
                     else
                     {
                         P1Score++;
                         p = 0;
                     }
+                }
                 
-                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed; p = 1; }
+                else
+                {
+                    P1Score++;
+                    p = 0;
+                }
+                if (matrz[0, 2] == 7) { panel3.Visible = true; panel3.BackColor = Color.DarkRed; p = 1; }
             }
             else
             {
+                
+                matrz[0, 1] = matrz[0, 1] + 2;
                 button19.BackColor = Color.Blue;
-                if (matrz[0, 1] == 15) {panel2.Visible = true; panel2.BackColor = Color.DarkBlue; }
+                if (matrz[0, 1] == 7) {
+                    if (button13.BackColor == Color.Red || button13.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkBlue;
+                    }
                     else
                     {
                         P1Score++;
                         p = 1;
                     }
-
-                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkBlue; p = 0; }
+                }
+                else
+                {
+                    P1Score++;
+                    p = 1;
+                }
+                if (matrz[0, 2] == 7) { panel3.Visible = true; panel3.BackColor = Color.DarkBlue; p = 0; }
             }
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
-            matrz[0, 1] = matrz[0, 1] + 4;
-            matrz[1, 1] = matrz[1, 1] + 1;
             if (p == 1)
             {
+                matrz[0, 1] = matrz[0, 1] + 4;
                 button5.BackColor = Color.Red;
-                if (matrz[0, 1] == 15) {panel2.Visible = true; panel2.BackColor = Color.DarkRed;}
+                if (matrz[0, 1] == 7) {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkRed;
+                    }
                     else
                     {
                        
                         p = 0;
                     }
-                if (matrz[1, 1]==15) { panel5.Visible = true;panel5.BackColor = Color.DarkRed; }
                 }
+                else
+                {
+                  
+                    p = 0;
+                }
+            }
             else
             {
+                matrz[0, 1] = matrz[0, 1] + 4;
                 button5.BackColor = Color.Blue;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue;}
+                if (matrz[0, 1] == 7) {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel2.Visible = true; panel2.BackColor = Color.DarkBlue;
+                    }
                     else { p = 1; }
-                if (matrz[1, 1] == 15) { panel5.Visible = true; panel5.BackColor = Color.DarkBlue; }
+                   
+                }
+                else
+                {
+                    P1Score++;
+                    p = 1;
+                }
             }
-            
         }
-        //
-        //Tercera casilla
-        //
+
         private void button3_Click(object sender, EventArgs e)
         {
-            matrz[0, 2] = matrz[0, 2] + 1;
+            
             if (p == 1)
-            { 
+            {
+                matrz[0, 2] = matrz[0, 2] + 1;
                 button3.BackColor = Color.Red;
-                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed;}
-                    else
-                    {
-                        p = 0;
-                    }
-            }
-            else
-            {
-                button3.BackColor = Color.Blue;
-                if (matrz[0, 2] == 15)
-                { panel3.Visible = true; panel3.BackColor = Color.DarkBlue; }
-                    else { p = 1; }
-            }
-        
-    }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            matrz[0, 2] = matrz[0, 2] + 2;
-            if (p == 1)
-            {
-                button21.BackColor = Color.Red;
-                if (matrz[0, 2] == 15)
-                { panel3.Visible = true; panel3.BackColor = Color.DarkRed;  }
-                    else
-                    {
-                        p = 0;
-                    }
-            }
-            else
-            {
-                button21.BackColor = Color.Blue;
-                if (matrz[0, 2] == 15) {panel3.Visible = true; panel3.BackColor = Color.DarkBlue;}
-                    else { p = 1; }
-
-            }
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            matrz[0, 2] = matrz[0, 2] + 4;
-            matrz[1, 2] = matrz[1, 2] + 1;
-            if (p == 1)
-            {
-
-                button6.BackColor = Color.Red;
                 if (matrz[0, 2] == 7)
                 {
                     if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
@@ -301,8 +324,54 @@ namespace Proyecto1._0
             }
             else
             {
-                matrz[0, 2] = matrz[0, 2] + 4;
-                button6.BackColor = Color.Blue;
+                matrz[0, 2] = matrz[0, 2] + 1;
+                button3.BackColor = Color.Blue;
+                if (matrz[0, 2] == 7)
+                {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel3.Visible = true; panel3.BackColor = Color.DarkBlue;
+                    }
+                    else { p = 1; }
+
+                }
+                else
+                {
+                    P1Score++;
+                    p = 1;
+                }
+            }
+        
+    }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (p == 1)
+            {
+                matrz[0, 2] = matrz[0, 2] + 2;
+                button21.BackColor = Color.Red;
+                if (matrz[0, 2] == 7)
+                {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel3.Visible = true; panel3.BackColor = Color.DarkRed;
+                    }
+                    else
+                    {
+
+                        p = 0;
+                    }
+                }
+                else
+                {
+
+                    p = 0;
+                }
+            }
+            else
+            {
+                matrz[0, 2] = matrz[0, 2] + 2;
+                button21.BackColor = Color.Blue;
                 if (matrz[0, 2] == 7)
                 {
                     if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
@@ -319,6 +388,9 @@ namespace Proyecto1._0
                 }
             }
         }
+
+
+
         private void button14_Click(object sender, EventArgs e)
         {
             if (p == 1)
@@ -506,7 +578,50 @@ namespace Proyecto1._0
             }
         }
 
-        
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (p == 1)
+            {
+                matrz[0, 2] = matrz[0, 2] + 4;
+                button6.BackColor = Color.Red;
+                if (matrz[0, 2] == 7)
+                {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel3.Visible = true; panel3.BackColor = Color.DarkRed;
+                    }
+                    else
+                    {
+
+                        p = 0;
+                    }
+                }
+                else
+                {
+
+                    p = 0;
+                }
+            }
+            else
+            {
+                matrz[0, 2] = matrz[0, 2] + 4;
+                button6.BackColor = Color.Blue;
+                if (matrz[0, 2] == 7)
+                {
+                    if (button19.BackColor == Color.Red || button19.BackColor == Color.Blue)
+                    {
+                        panel3.Visible = true; panel3.BackColor = Color.DarkBlue;
+                    }
+                    else { p = 1; }
+
+                }
+                else
+                {
+                    P1Score++;
+                    p = 1;
+                }
+            }
+        }
 
       
     }
