@@ -1,0 +1,12 @@
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\bin\Debug\Proyecto1.0.exe.config
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\bin\Debug\Proyecto1.0.exe
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\bin\Debug\Proyecto1.0.pdb
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Form1.resources
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Properties.Resources.resources
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.csproj.GenerateResource.cache
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.csproj.CoreCompileInputs.cache
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.exe
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.pdb
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.SopaL.resources
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.csprojAssemblyReference.cache
+C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Form2.resources
