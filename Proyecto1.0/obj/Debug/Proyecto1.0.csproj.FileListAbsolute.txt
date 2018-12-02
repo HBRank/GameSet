@@ -9,5 +9,5 @@ C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.exe
 C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.pdb
 C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.SopaL.resources
 C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.csprojAssemblyReference.cache
-C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Form2.resources
 C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Loteria.resources
+C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Timbiriche.resources

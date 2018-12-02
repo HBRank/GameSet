@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Proyecto1._0
 {
-    public partial class Form2 : Form
+    public partial class Timbiriche : Form
     {
         
         int Turno = 0;//Variable para el control del turno del juagdor.
@@ -18,7 +19,7 @@ namespace Proyecto1._0
         int[,] matrz = new int[3, 3];//Matriz que representa los cuadros del juego
                
         int P1Score= 0,P2Score=0;
-        public Form2()
+        public Timbiriche()
         {
 
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Proyecto1._0
             if (Turno == 1)
             {      
                 button1.BackColor = Color.Black;//Cambuia el color del vboton cuando es pulsado
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }//Pone visible el panel y cambiel color dependiedo del jugador
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; P1Score++; }//Pone visible el panel y cambiel color dependiedo del jugador
                 else
                 {
                     Turno = 0;//Cambia el turno
@@ -66,14 +67,14 @@ namespace Proyecto1._0
                 button13.BackColor = Color.Black;
                 if (matrz[0, 0] == 15)
                 {
-                    panel1.Visible = true; panel1.BackColor = Color.DarkRed;
+                    panel1.Visible = true; panel1.BackColor = Color.DarkRed; P1Score++;
                 }
                 else
                 {
                     P1Score++;
                     Turno = 0;
                 }
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -100,13 +101,13 @@ namespace Proyecto1._0
             if (Turno == 1)
             {  
                 button4.BackColor = Color.Black;
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     P1Score++;
                     Turno = 0;
                 }
-                if (matrz[1, 0] == 15) { panel4.Visible = true; panel4.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[1, 0] == 15) { panel4.Visible = true; panel4.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
 
             }
             else
@@ -132,7 +133,7 @@ namespace Proyecto1._0
             if (Turno == 1)
             {
                 button18.BackColor = Color.Black;
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; }
+                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     P1Score++;
@@ -164,8 +165,9 @@ namespace Proyecto1._0
             if (Turno == 1)
             {
                 button2.BackColor = Color.Black;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed;
-                    }
+                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; P1Score++;
+                }
+             
                     else
                     {
                         Turno = 0;
@@ -193,14 +195,14 @@ namespace Proyecto1._0
             if (Turno == 1)
             {
                 button19.BackColor = Color.Black;
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; }
+                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
                         P1Score++;
                         Turno = 0;
                     }
                 
-                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -227,13 +229,13 @@ namespace Proyecto1._0
             if (Turno == 1)
             {
                 button5.BackColor = Color.Black;
-                if (matrz[0, 1] == 15) {panel2.Visible = true; panel2.BackColor = Color.DarkRed;}
+                if (matrz[0, 1] == 15) {panel2.Visible = true; panel2.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
                        
                         Turno = 0;
                     }
-                if (matrz[1, 1]==15) { panel5.Visible = true;panel5.BackColor = Color.DarkRed;Turno = 1; }
+                if (matrz[1, 1]==15) { panel5.Visible = true;panel5.BackColor = Color.DarkRed;Turno = 1; P1Score++; }
                 }
             else
             {
@@ -257,7 +259,7 @@ namespace Proyecto1._0
             if (Turno == 1)
             { 
                 button3.BackColor = Color.Black;
-                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed;}
+                if (matrz[0, 2] == 15) { panel3.Visible = true; panel3.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
                         Turno = 0;
@@ -284,7 +286,7 @@ namespace Proyecto1._0
             {
                 button21.BackColor = Color.Black;
                 if (matrz[0, 2] == 15)
-                { panel3.Visible = true; panel3.BackColor = Color.DarkRed;  }
+                { panel3.Visible = true; panel3.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
                         Turno = 0;
@@ -311,11 +313,11 @@ namespace Proyecto1._0
             {
                 button6.BackColor = Color.Black;
                 if (matrz[0, 2] == 15)
-                { panel3.Visible = true; panel3.BackColor = Color.DarkRed; }
+                { panel3.Visible = true; panel3.BackColor = Color.DarkRed; P1Score++; }
                 else
                 { Turno = 0;
                 }
-                if (matrz[1, 2] == 15) { panel6.Visible = true;panel6.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[1, 2] == 15) { panel6.Visible = true;panel6.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -344,12 +346,12 @@ namespace Proyecto1._0
             {
                 button14.BackColor = Color.Black;
                 if (matrz[1,0] == 15)
-                {  panel4.Visible = true; panel4.BackColor = Color.DarkRed; }
+                {  panel4.Visible = true; panel4.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
                         Turno = 0;
                     }
-                if (matrz[1, 1] == 15) { panel5.Visible = true; panel5.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[1, 1] == 15) { panel5.Visible = true; panel5.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -374,13 +376,13 @@ namespace Proyecto1._0
             {
                 button7.BackColor = Color.Black;
                 if (matrz[1,0] == 15)
-                {    panel4.Visible = true; panel4.BackColor = Color.DarkRed; }
+                {    panel4.Visible = true; panel4.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
 
                         Turno = 0;
                     }
-                if (matrz[2, 0] == 15) { panel7.Visible = true; panel7.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[2, 0] == 15) { panel7.Visible = true; panel7.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -404,7 +406,7 @@ namespace Proyecto1._0
             {
                 button17.BackColor = Color.Black;
                 if (matrz[1, 0] == 15)
-                { panel4.Visible = true; panel4.BackColor = Color.DarkRed; }
+                { panel4.Visible = true; panel4.BackColor = Color.DarkRed; P1Score++; }
                 else
                 { Turno = 0;
                 }
@@ -433,14 +435,14 @@ namespace Proyecto1._0
             {
                 button20.BackColor = Color.Black;
                 if (matrz[1, 1] == 15)
-                {panel5.Visible = true; panel5.BackColor = Color.DarkRed; }
+                {panel5.Visible = true; panel5.BackColor = Color.DarkRed; P1Score++; }
                     else
                     {
 
                         Turno = 0;
                     }
 
-                if (matrz[0, 2] == 15 ) { panel6.Visible = true; panel6.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[0, 2] == 15 ) { panel6.Visible = true; panel6.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
              } 
             else
             {
@@ -466,12 +468,12 @@ namespace Proyecto1._0
             {
                 button8.BackColor = Color.Black;
                 if (matrz[1, 1] == 15)
-                { panel5.Visible = true; panel5.BackColor = Color.DarkRed; }
+                { panel5.Visible = true; panel5.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
                 }
-                if (matrz[2, 1] == 15) { panel8.Visible = true; panel8.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[2, 1] == 15) { panel8.Visible = true; panel8.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -498,7 +500,7 @@ namespace Proyecto1._0
             {
                 button23.BackColor = Color.Black;
                 if (matrz[1,2] == 15)
-                { panel6.Visible = true; panel6.BackColor = Color.DarkRed; }
+                { panel6.Visible = true; panel6.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
@@ -525,12 +527,12 @@ namespace Proyecto1._0
             {
                 button9.BackColor = Color.Black;
                 if (matrz[1, 2] == 15)
-                { panel6.Visible = true; panel6.BackColor = Color.DarkRed; }
+                { panel6.Visible = true; panel6.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
                 }
-                if (matrz[2, 2] == 15) { panel9.Visible = true; panel9.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[2, 2] == 15) { panel9.Visible = true; panel9.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -558,12 +560,12 @@ namespace Proyecto1._0
             {
                 button15.BackColor = Color.Black;
                 if (matrz[2, 0] == 15)
-                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; }
+                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
                 }
-                if (matrz[2, 1] == 15) { panel8.Visible = true; panel8.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[2, 1] == 15) { panel8.Visible = true; panel8.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -589,7 +591,7 @@ namespace Proyecto1._0
             {
                 button10.BackColor = Color.Black;
                 if (matrz[2, 0] == 15)
-                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; }
+                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
@@ -617,7 +619,7 @@ namespace Proyecto1._0
             {
                 button16.BackColor = Color.Black;
                 if (matrz[2, 0] == 15)
-                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; }
+                { panel7.Visible = true; panel7.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
@@ -647,12 +649,12 @@ namespace Proyecto1._0
             {
                 button22.BackColor = Color.Black;
                 if (matrz[2, 1] == 15)
-                { panel8.Visible = true; panel8.BackColor = Color.DarkRed; }
+                { panel8.Visible = true; panel8.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
                 }
-                if (matrz[2, 2] == 15) { panel9.Visible = true; panel9.BackColor = Color.DarkRed; Turno = 1; }
+                if (matrz[2, 2] == 15) { panel9.Visible = true; panel9.BackColor = Color.DarkRed; Turno = 1; P1Score++; }
             }
             else
             {
@@ -679,7 +681,7 @@ namespace Proyecto1._0
             {
                 button11.BackColor = Color.Black;
                 if (matrz[2, 1] == 15)
-                { panel8.Visible = true; panel8.BackColor = Color.DarkRed; }
+                { panel8.Visible = true; panel8.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
@@ -709,7 +711,7 @@ namespace Proyecto1._0
             {
                 button24.BackColor = Color.Black;
                 if (matrz[2, 2] == 15)
-                { panel9.Visible = true; panel9.BackColor = Color.DarkRed; }
+                { panel9.Visible = true; panel9.BackColor = Color.DarkRed; P1Score++; }
                 else
                 {
                     Turno = 0;
@@ -734,7 +736,6 @@ namespace Proyecto1._0
             }
         }
 
-    
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -743,7 +744,7 @@ namespace Proyecto1._0
             {
                 button12.BackColor = Color.Black;
                 if (matrz[2, 2] == 15)
-                { panel9.Visible = true; panel9.BackColor = Color.DarkRed; }
+                { panel9.Visible = true; panel9.BackColor = Color.DarkRed;P1Score++; }
                 else
                 {
                     Turno = 0;

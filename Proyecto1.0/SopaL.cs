@@ -14,7 +14,7 @@ namespace Proyecto1._0
 {
     public partial class SopaL : Form
     {
-        
+        int scoreP = 0;
         List<CheckBox> lista = new List<CheckBox>();
         int correct = 0;
         int Nline = 0;
@@ -36,7 +36,7 @@ namespace Proyecto1._0
 
 
 
-            /*
+            
             for (int f = 0; f < Sopa.RowCount; f++)
             {
                 for (int c = 0; c < Sopa.ColumnCount; c++)
@@ -47,7 +47,7 @@ namespace Proyecto1._0
 
 
                 }
-            }*/
+            }
 
             for (int f = 0; f < Sopa.RowCount; f++) { 
                  for (int c= 0; c<Sopa.ColumnCount; c++) {
@@ -342,7 +342,8 @@ namespace Proyecto1._0
                 {
 
                     lista[Nline].Checked = true;
-                    
+                    scoreP++;
+                    label1.Text = string.Format("Score:{0}", scoreP);
                     MessageBox.Show("Correct");
                     correct = 0;
                     Nline = 0;
@@ -362,6 +363,10 @@ namespace Proyecto1._0
             }
 
         }
-          
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

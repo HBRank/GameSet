@@ -35,7 +35,7 @@ namespace Proyecto1._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
+            Timbiriche Form2 = new Timbiriche();
             Form2.Show();
         }
 

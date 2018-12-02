@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Proyecto1._0
 {
@@ -18,15 +19,20 @@ namespace Proyecto1._0
         //lista de enteros para guardar numeros enteros del 1, 52.
         List<int> lista = new List<int>();
         int[] carta = new int[32];
+        List<PictureBox> ListaP1 = new List<PictureBox>();
+        int scorep = 0, scoreCPU = 0;
+        List<Panel> panel = new List<Panel>();
+
         public Loteria()
         {
             InitializeComponent();
+
+
+
         }
         //codigo random para que una carta y tabla salga aleatoriamente si se llega a repetir iniciar proceso otra vez asta que salga una diferente 
         private void button2_Click(object sender, EventArgs e)
         {
-            // int carta1, carta2, carta3, carta4, carta5, carta6, carta7, carta8, carta9, carta10, carta11, carta12, carta13, carta14, carta15, carta16, carta17, carta18, carta19, carta20, carta21, carta22, carta23, carta24, carta25, carta26, carta27, carta28, carta29, carta30, carta31,carta32;
-            
         
             for(int j = 0; j < 32; j++)
             {
@@ -34,39 +40,23 @@ namespace Proyecto1._0
                 while (lista.Contains(carta[j])) { carta[j] = alea.Next(1,54); }
                 lista.Add(carta[j]);                  
             }
-            pictureBox1.Image = Image.FromFile(string.Format("carta ({0}).jpg",carta[1]));
-            pictureBox2.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[2]));
-            pictureBox3.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[3]));
-            pictureBox4.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[4]));
-            pictureBox5.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[5]));
-            pictureBox6.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[6]));
-            pictureBox7.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[7]));
-            pictureBox8.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[8]));
-            pictureBox9.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[9]));
-            pictureBox10.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[10]));
-            pictureBox11.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[11]));
-            pictureBox12.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[12]));
+            for (int j = 1; j < 17; j++)
+            {
+                panel.Add((Panel)Controls.Find("panel" + j, true)[0]);
 
-            pictureBox13.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[13]));
-            pictureBox14.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[14]));
-            pictureBox15.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[15]));
-            pictureBox16.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[16]));
-            pictureBox17.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[17]));
-            pictureBox18.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[18]));
-            pictureBox19.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[19]));
-            pictureBox20.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[20]));
-            pictureBox21.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[21]));
-            pictureBox22.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[22]));
-            pictureBox23.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[23]));
-            pictureBox24.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[24]));
-            pictureBox25.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[25]));
-            pictureBox26.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[26]));
-            pictureBox27.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[27]));
-            pictureBox28.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[28]));
-            pictureBox29.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[29]));
-            pictureBox30.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[30]));
-            pictureBox31.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[31]));
-            pictureBox32.Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[0]));
+            }
+            for (int j = 0; j <16; j++)
+            {
+                
+                   ListaP1.Add((PictureBox)Controls.Find("pictureBox"+j ,true)[0]);
+                ListaP1[j].Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[j]));
+            }
+            for (int j = 16; j < 32; j++)
+            {
+                ListaP1.Add((PictureBox)Controls.Find("pictureBox" + j, true)[0]);
+                ListaP1[j].Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[j]));
+            }
+           
             lista.Clear();
 
         }
@@ -87,35 +77,59 @@ namespace Proyecto1._0
                     while (lista.Contains(num)) { num = Convert.ToInt32(alea.Next(1, 54)); }
                     lista.Add(num);
           
-
-              
-               
+     
                     baraja1.Image = Image.FromFile(string.Format("carta ({0}).jpg",num));
-            l++;
-            if (l == 0) { timer1.Enabled = false; }
-
+           int g = 0;
+           for(int j = 16; j < 32; j++)
+            {
+                
+                if (carta[j] == num)
+                {
+                    panel[g].Visible = true;
+                    scoreCPU++;
                 }
-        //presionar sobre la imagen para especificar que esta esta correcta
+                g++;
+            }
+            l++;
+            if (l == 52) { timer1.Enabled = false; }
+            if (scoreCPU == 16)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Ganador: CPU");
+                this.Close();
+                
+               
+            }
+            if (scorep==16)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Ganador: Jugador");
+                this.Close();
+               /* String file = File.ReadAllLines("scores.txt")[4];
+                string[] lines = File.ReadAllLines("scores.txt");
+                int sc = Convert.ToInt16(file);
+                sc++;
+                lines[4] = Convert.ToString(sc);
+
+                File.WriteAllLines("scores.txt", lines);*/
+            }
+        }
+
+        private void pictureBox0_Click(object sender, EventArgs e)
+        {
+            if (lista.Contains(carta[0]))
+            {
+                c1.Visible = true;
+                scorep++;
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[1])) {
-                c1.Visible = true;   
-            }
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (lista.Contains(carta[4]))
+            if (lista.Contains(carta[1]))
             {
                 c2.Visible = true;
-            }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (lista.Contains(carta[3]))
-            {
-                c3.Visible = true;
+                scorep++;
             }
         }
 
@@ -123,23 +137,35 @@ namespace Proyecto1._0
         {
             if (lista.Contains(carta[2]))
             {
-                c4.Visible = true;
+                c3.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[8]))
+            if (lista.Contains(carta[3]))
+            {
+                c4.Visible = true;
+                scorep++;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (lista.Contains(carta[4]))
             {
                 c5.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[7]))
+            if (lista.Contains(carta[5]))
             {
                 c6.Visible = true;
+                scorep++;
             }
         }
 
@@ -148,46 +174,53 @@ namespace Proyecto1._0
             if (lista.Contains(carta[6]))
             {
                 c7.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[5]))
+            if (lista.Contains(carta[7]))
             {
                 c8.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox16_Click(object sender, EventArgs e)
+        private void pictureBox8_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[16]))
+            if (lista.Contains(carta[8]))
             {
                 c9.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox15_Click(object sender, EventArgs e)
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[15]))
+            if (lista.Contains(carta[9]))
             {
                 c10.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox14_Click(object sender, EventArgs e)
+        private void pictureBox10_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[14]))
+            if (lista.Contains(carta[10]))
             {
                 c11.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox13_Click(object sender, EventArgs e)
+        private void pictureBox11_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[13]))
+            if (lista.Contains(carta[11]))
             {
                 c12.Visible = true;
+                scorep++;
+
             }
         }
 
@@ -196,34 +229,39 @@ namespace Proyecto1._0
             if (lista.Contains(carta[12]))
             {
                 c13.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox11_Click(object sender, EventArgs e)
+        private void pictureBox13_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[11]))
+            if (lista.Contains(carta[13]))
             {
                 c14.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox10_Click(object sender, EventArgs e)
+        private void pictureBox14_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[10]))
+            if (lista.Contains(carta[14]))
             {
                 c15.Visible = true;
+                scorep++;
             }
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void pictureBox15_Click(object sender, EventArgs e)
         {
-            if (lista.Contains(carta[9]))
+            if (lista.Contains(carta[15]))
             {
                 c16.Visible = true;
+                scorep++;
             }
         }
+
+ 
+        //presionar sobre la imagen para especificar que esta esta correcta
+
     }
         }
-    
-
-

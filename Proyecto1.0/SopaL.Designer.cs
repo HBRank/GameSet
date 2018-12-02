@@ -41,8 +41,8 @@ namespace Proyecto1._0
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Sopa = new System.Windows.Forms.DataGridView();
-            this.Bsalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Sopa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,24 +88,24 @@ namespace Proyecto1._0
             this.Sopa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sopa_CellContentClick);
             this.Sopa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sopa_CellDoubleClick);
             // 
-            // Bsalir
-            // 
-            this.Bsalir.Location = new System.Drawing.Point(133, 335);
-            this.Bsalir.Name = "Bsalir";
-            this.Bsalir.Size = new System.Drawing.Size(75, 23);
-            this.Bsalir.TabIndex = 4;
-            this.Bsalir.Text = "button1";
-            this.Bsalir.UseVisualStyleBackColor = true;
-            this.Bsalir.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(133, 380);
+            this.button2.Location = new System.Drawing.Point(222, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
+            this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(250, 335);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Score: 0";
             // 
             // SopaL
             // 
@@ -113,21 +113,22 @@ namespace Proyecto1._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 461);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.Bsalir);
             this.Controls.Add(this.Sopa);
             this.Name = "SopaL";
             this.Text = "Sopa De Letras";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Sopa)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView Sopa;
-        private System.Windows.Forms.Button Bsalir;
         private System.Windows.Forms.Button button2;
+        private Label label1;
     }
 }

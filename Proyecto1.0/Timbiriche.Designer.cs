@@ -1,6 +1,6 @@
 ﻿namespace Proyecto1._0
 {
-    partial class Form2
+    partial class Timbiriche
     {
         /// <summary>
         /// Required designer variable.
@@ -652,7 +652,7 @@
             this.panel32.Size = new System.Drawing.Size(10, 10);
             this.panel32.TabIndex = 42;
             // 
-            // Form2
+            // Timbiriche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -708,8 +708,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form2";
+            this.Name = "Timbiriche";
             this.Text = "Timbiriche";
+
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
