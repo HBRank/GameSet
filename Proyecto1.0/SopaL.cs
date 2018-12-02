@@ -141,7 +141,7 @@ namespace Proyecto1._0
                 int distancia = 0;
                
                 line = File.ReadAllLines(@"c:\lul\test.txt")[z];
-
+                
                 myChar = line.ToCharArray();
 
                 s = Convert.ToInt32(myChar.Length);

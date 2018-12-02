@@ -38,5 +38,11 @@ namespace Proyecto1._0
             Form2 Form2 = new Form2();
             Form2.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Loteria Loteria = new Loteria();
+            Loteria.Show();
+        }
     }
 }
