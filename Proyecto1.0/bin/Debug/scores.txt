@@ -1,0 +1,13 @@
+Socres:
+
+Loteria:
+2
+
+Sopa de Letras:
+0
+
+Timbireiche:
+p1:
+0
+p2:
+0

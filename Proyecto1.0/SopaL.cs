@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Proyecto1._0;
 
 
 namespace Proyecto1._0
 {
-    public partial class SopaL : Form
+    public partial class SopaL :Form
     {
         int scoreP = 0;
         List<CheckBox> lista = new List<CheckBox>();
@@ -229,7 +230,7 @@ namespace Proyecto1._0
 
             return SopaS;
         }
-        public void leerPalabras(DataGridView d, char[,] matriz)
+        public void leerPalabras(DataGridView d, char[,] matriz) 
         {
             StringBuilder a = new StringBuilder();
             
@@ -340,7 +341,7 @@ namespace Proyecto1._0
 
                 if (correct == s)
                 {
-
+                    
                     lista[Nline].Checked = true;
                     scoreP++;
                     label1.Text = string.Format("Score:{0}", scoreP);

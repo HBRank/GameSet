@@ -28,7 +28,6 @@ namespace Proyecto1._0
             InitializeComponent();
 
 
-
         }
         //codigo random para que una carta y tabla salga aleatoriamente si se llega a repetir iniciar proceso otra vez asta que salga una diferente 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +63,22 @@ namespace Proyecto1._0
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-        }   
+        }
+        public int writeScore(int a)
+        {
+            string line = File.ReadAllLines("scores.txt")[a];
+            int sc = Convert.ToInt32(line);
+            sc++;
+            string[] lines = File.ReadAllLines("scores.txt");
+            string allString = "";
+            lines[a] = Convert.ToString(sc);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                allString += lines[i]+"\n";
+            }
+            File.WriteAllText("scores.txt",allString);
+            return 0;
+        }
         //temporizador para que cada carta salga en determinado tiempo 
         private void timer1_Tick(object sender, EventArgs e)
         {//codigo aleatorio de la baraja permite que no se repita una carta que ya aya pasado
@@ -105,13 +119,7 @@ namespace Proyecto1._0
                 timer1.Enabled = false;
                 MessageBox.Show("Ganador: Jugador");
                 this.Close();
-               /* String file = File.ReadAllLines("scores.txt")[4];
-                string[] lines = File.ReadAllLines("scores.txt");
-                int sc = Convert.ToInt16(file);
-                sc++;
-                lines[4] = Convert.ToString(sc);
-
-                File.WriteAllLines("scores.txt", lines);*/
+                writeScore(3);
             }
         }
 
