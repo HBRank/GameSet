@@ -36,9 +36,10 @@ namespace Proyecto1._0
             Sopa.ColumnCount = 20;
             Palabras = AsignarPalabras();
 
-
-
             
+
+
+
             for (int f = 0; f < Sopa.RowCount; f++)
             {
                 for (int c = 0; c < Sopa.ColumnCount; c++)
@@ -344,7 +345,7 @@ namespace Proyecto1._0
 
                 if (correct == s)
                 {
-                    writeScore(5);
+                   
  
                     lista[Nline].Checked = true;
                     scoreP++;
@@ -353,7 +354,8 @@ namespace Proyecto1._0
                     correct = 0;
                     Nline = 0;
                     s = 0;
-                    
+                    writeScore(5);
+
                 }
             }
             
@@ -372,6 +374,12 @@ namespace Proyecto1._0
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InstruccionesSopa instruccionesSopa = new InstruccionesSopa();
+            instruccionesSopa.Show();
         }
     }
 }

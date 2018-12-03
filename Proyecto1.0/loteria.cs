@@ -111,15 +111,16 @@ namespace Proyecto1._0
                 timer1.Enabled = false;
                 MessageBox.Show("Ganador: CPU");
                 this.Close();
-                
-               
+                timer1.Enabled = false;
+
             }
             if (scorep==16)
             {
-                timer1.Enabled = false;
+               
                 MessageBox.Show("Ganador: Jugador");
                 this.Close();
                 writeScore(3);
+                timer1.Enabled = false;
             }
         }
 
@@ -257,6 +258,11 @@ namespace Proyecto1._0
                 c15.Visible = true;
                 scorep++;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)

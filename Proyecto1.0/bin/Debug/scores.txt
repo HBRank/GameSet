@@ -1,13 +1,11 @@
-Socres:
+Scores:
 
 Loteria:
-2
-
+0
 Sopa de Letras:
 0
-
-Timbireiche:
+Timbiriche:
 p1:
 0
 p2:
-0
+1

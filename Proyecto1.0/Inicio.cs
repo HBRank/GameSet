@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace Proyecto1._0
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
+            scores();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +46,26 @@ namespace Proyecto1._0
            
             Loteria Loteria = new Loteria();
             Loteria.Show();
+        }
+        public void scores()
+        {
+            string[] line = File.ReadAllLines("scores.txt");
+            label3.Text = line[0];
+            label4.Text = line[2];
+            label5.Text = line[3];
+            label6.Text = line[4];
+            label7.Text = line[5];
+            label8.Text = line[6];
+            label9.Text = line[7];
+            label10.Text = line[8];
+            label11.Text = line[9];
+            label12.Text = line[10];
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+     
         }
     }
 }

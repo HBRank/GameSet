@@ -86,6 +86,8 @@
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button25 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -652,11 +654,37 @@
             this.panel32.Size = new System.Drawing.Size(10, 10);
             this.panel32.TabIndex = 42;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(655, 405);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(112, 22);
+            this.linkLabel1.TabIndex = 45;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Instrucciones";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(634, 351);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(119, 23);
+            this.button25.TabIndex = 46;
+            this.button25.Text = "Terminar Juego";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
             // Timbiriche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button25);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panel32);
             this.Controls.Add(this.panel30);
             this.Controls.Add(this.panel29);
@@ -710,7 +738,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Timbiriche";
             this.Text = "Timbiriche";
-
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -719,6 +746,7 @@
             this.JugadorP2.ResumeLayout(false);
             this.JugadorP2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -781,5 +809,7 @@
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Label j1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button25;
     }
 }
