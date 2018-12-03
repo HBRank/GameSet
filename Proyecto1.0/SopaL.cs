@@ -11,6 +11,7 @@ using System.IO;
 using Proyecto1._0;
 
 
+
 namespace Proyecto1._0
 {
     public partial class SopaL :Form
@@ -187,7 +188,7 @@ namespace Proyecto1._0
             }
 
 
-
+            
 
 
             //Crea una lista de checkbox 
@@ -268,23 +269,25 @@ namespace Proyecto1._0
         {
 
         }
-
+        public int writeScore(int a)
+        {
+            string line = File.ReadAllLines("scores.txt")[a];
+            int sc = Convert.ToInt32(line);
+            sc++;
+            string[] lines = File.ReadAllLines("scores.txt");
+            string allString = "";
+            lines[a] = Convert.ToString(sc);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                allString += lines[i] + "\n";
+            }
+            File.WriteAllText("scores.txt", allString);
+            
+            return 0;
+        }
         
 
-        private void Sopa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lpalabra1_MouseCaptureChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void Sopa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -341,7 +344,8 @@ namespace Proyecto1._0
 
                 if (correct == s)
                 {
-                    
+                    writeScore(5);
+ 
                     lista[Nline].Checked = true;
                     scoreP++;
                     label1.Text = string.Format("Score:{0}", scoreP);

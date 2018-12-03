@@ -85,7 +85,6 @@ namespace Proyecto1._0
             this.Sopa.Size = new System.Drawing.Size(406, 425);
             this.Sopa.TabIndex = 0;
             this.Sopa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sopa_CellClick);
-            this.Sopa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sopa_CellContentClick);
             this.Sopa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Sopa_CellDoubleClick);
             // 
             // button2

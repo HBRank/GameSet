@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Proyecto1._0
 {
     public partial class Form1 : Form
@@ -41,6 +42,7 @@ namespace Proyecto1._0
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             Loteria Loteria = new Loteria();
             Loteria.Show();
         }
