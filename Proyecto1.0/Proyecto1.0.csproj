@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="Resources\black.jpg" />
     <Content Include="Resources\descarga.png" />
+    <Content Include="Resources\loteria.jpg" />
     <Content Include="Resources\sopatum.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
