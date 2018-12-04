@@ -6,6 +6,6 @@ Sopa de Letras:
 0
 Timbiriche:
 p1:
-0
-p2:
 1
+p2:
+2

@@ -29,6 +29,10 @@ namespace Proyecto1._0
         {
 
             InitializeComponent();
+            llenarGrid();
+        }
+        public void llenarGrid()
+        {
             // 16/11/18 - Insertamos un GridView ,cambiamos la configuracion para que no se pudiera escribir
             char[,] Palabras = new char[20, 20];
 
@@ -36,7 +40,7 @@ namespace Proyecto1._0
             Sopa.ColumnCount = 20;
             Palabras = AsignarPalabras();
 
-            
+
 
 
 
@@ -52,20 +56,25 @@ namespace Proyecto1._0
                 }
             }
 
-            for (int f = 0; f < Sopa.RowCount; f++) { 
-                 for (int c= 0; c<Sopa.ColumnCount; c++) {
-                    if (Palabras[c, f]!= '\0'){
+            for (int f = 0; f < Sopa.RowCount; f++)
+            {
+                for (int c = 0; c < Sopa.ColumnCount; c++)
+                {
+                    if (Palabras[c, f] != '\0')
+                    {
                         Sopa[f, c].Value = Palabras[c, f];
 
                     }
 
-             } }
-            leerPalabras(Sopa,Palabras);
-        }
-
+                }
+            }
+            
         
 
-        public char[,] AsignarPalabras()
+
+    }
+
+    public char[,] AsignarPalabras()
         {
            
             char[,] SopaS = new char[20, 20];
@@ -221,55 +230,11 @@ namespace Proyecto1._0
                 lista[z].Text = nom[z];
             }
 
-            
-            
-
-
-
-
-
-
-
             return SopaS;
         }
-        public void leerPalabras(DataGridView d, char[,] matriz) 
-        {
-            StringBuilder a = new StringBuilder();
-            
         
-        }
-        
-        private void Form2_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int f = Sopa.CurrentCell.ColumnIndex;
-            int c = Sopa.CurrentCell.RowIndex;
-            MessageBox.Show("Lul:");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-       
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         public int writeScore(int a)
         {
             string line = File.ReadAllLines("scores.txt")[a];

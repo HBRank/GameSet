@@ -16,12 +16,12 @@ namespace Proyecto1._0
     {
         Random alea = new Random();
         int l=0;
-        //lista de enteros para guardar numeros enteros del 1, 52.
-        List<int> lista = new List<int>();
+      
+        List<int> lista = new List<int>();//lista de enteros para guardar numeros enteros del 1, 52.
         int[] carta = new int[32];
-        List<PictureBox> ListaP1 = new List<PictureBox>();
-        int scorep = 0, scoreCPU = 0;
-        List<Panel> panel = new List<Panel>();
+        List<PictureBox> ListaP1 = new List<PictureBox>();//lsita de picturebox que almacena las imagens del cpu 
+        int scorep = 0, scoreCPU = 0;//las puntuaciones del jugador y de la maquina.
+        List<Panel> panel = new List<Panel>();//lista de paneles para "marcar las imagenes" .
 
         public Loteria()
         {
@@ -29,8 +29,8 @@ namespace Proyecto1._0
 
 
         }
-        //codigo random para que una carta y tabla salga aleatoriamente si se llega a repetir iniciar proceso otra vez asta que salga una diferente 
-        private void button2_Click(object sender, EventArgs e)
+        //codigo random para que una carta y tabla salga aleatoriamente si se llega a repetir iniciar proceso otra vez hasta que salga una diferente 
+        private void tabla_Click(object sender, EventArgs e)
         {
         
             for(int j = 0; j < 32; j++)
@@ -60,7 +60,7 @@ namespace Proyecto1._0
 
         }
         //precion de botton para que el juego inicie con la baraja.
-        private void button1_Click(object sender, EventArgs e)
+        private void inicioj_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
         }
@@ -81,7 +81,7 @@ namespace Proyecto1._0
         }
         //temporizador para que cada carta salga en determinado tiempo 
         private void timer1_Tick(object sender, EventArgs e)
-        {//codigo aleatorio de la baraja permite que no se repita una carta que ya aya pasado
+        {//codigo aleatorio de la baraja permite que no se repita una carta que ya paso.
                 
 
                
@@ -94,7 +94,7 @@ namespace Proyecto1._0
      
                     baraja1.Image = Image.FromFile(string.Format("carta ({0}).jpg",num));
            int g = 0;
-           for(int j = 16; j < 32; j++)
+           for(int j = 16; j < 32   ; j++)//cilco para verificar si la carta que esta siendo mostrada esta en las cartas del cpu
             {
                 
                 if (carta[j] == num)
@@ -105,8 +105,8 @@ namespace Proyecto1._0
                 g++;
             }
             l++;
-            if (l == 52) { timer1.Enabled = false; }
-            if (scoreCPU == 16)
+            if (l == 54) { timer1.Enabled = false; }//Condicional para detener el timer cuando las cartas acaben.
+            if (scoreCPU == 16)//Condicional para saber si algun jugador a ganado.
             {
                 timer1.Enabled = false;
                 MessageBox.Show("Ganador: CPU");
@@ -123,7 +123,7 @@ namespace Proyecto1._0
                 timer1.Enabled = false;
             }
         }
-
+        //presionar sobre la imagen para especificar que esta esta correcta.
         private void pictureBox0_Click(object sender, EventArgs e)
         {
             if (lista.Contains(carta[0]))
@@ -275,7 +275,7 @@ namespace Proyecto1._0
         }
 
  
-        //presionar sobre la imagen para especificar que esta esta correcta
+   
 
     }
         }

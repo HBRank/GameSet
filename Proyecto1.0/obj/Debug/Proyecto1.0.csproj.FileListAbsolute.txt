@@ -11,6 +11,5 @@ C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1.0.csprojA
 C:\Users\Hugo\source\repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Loteria.resources
 C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Timbiriche.resources
 C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.InstruccionesSopa.resources
-C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Form2.resources
 C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.InstruccionesTim1.resources
 C:\Users\Hugo\Source\Repos\Proyecto1.0\Proyecto1.0\obj\Debug\Proyecto1._0.Inicio.resources

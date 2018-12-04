@@ -146,7 +146,6 @@ namespace Proyecto1._0
             this.Controls.Add(this.Sopa);
             this.Name = "SopaL";
             this.Text = "Sopa De Letras";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Sopa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

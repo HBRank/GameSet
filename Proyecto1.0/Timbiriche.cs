@@ -60,42 +60,43 @@ namespace Proyecto1._0
                 JugadorP.BackColor = Color.Blue; JugadorP2.BackColor = Color.Transparent;
             }
         }
-        private void button13_Click(object sender, EventArgs e)
-        {
-            matrz[0, 0] = matrz[0, 0] + 2;
-            matrz[0, 1] = matrz[0, 1] + 8;
-            if (Turno == 1)
+        
+            private void button13_Click(object sender, EventArgs e)
             {
-                button13.BackColor = Color.Black;
-                if (matrz[0, 0] == 15)
+                matrz[0, 0] = matrz[0, 0] + 2;
+                matrz[0, 1] = matrz[0, 1] + 8;
+                if (Turno == 1)
                 {
-                    panel1.Visible = true; panel1.BackColor = Color.DarkRed; P2Score++; label1.Text = string.Format("Jugador 2:{0}", P2Score);
+                    button13.BackColor = Color.Black;
+                    if (matrz[0, 0] == 15)
+                    {
+                        panel1.Visible = true; panel1.BackColor = Color.DarkRed; P2Score++; label1.Text = string.Format("Jugador 2:{0}", P2Score);
+                    }
+                    else
+                    {
+
+                        Turno = 0;
+                    }
+                    if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; Turno = 1; P2Score++; label1.Text = string.Format("Jugador 2:{0}", P2Score); }
                 }
                 else
                 {
-                  
-                    Turno = 0;
+                    button13.BackColor = Color.Black;
+
+                    if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; P1Score++; j1.Text = string.Format("Jugador 1:{0}", P1Score); }
+                    else
+                    {
+
+                        Turno = 1;
+                    }
+                    if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue; Turno = 0; P1Score++; j1.Text = string.Format("Jugador 1:{0}", P1Score); }
                 }
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkRed; Turno = 1; P2Score++; label1.Text = string.Format("Jugador 2:{0}", P2Score); }
-            }
-            else
-            {
-                button13.BackColor = Color.Black;
-               
-                if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkBlue; P1Score++; j1.Text = string.Format("Jugador 1:{0}", P1Score); }
+                if (Turno == 1) { JugadorP.BackColor = Color.Transparent; JugadorP2.BackColor = Color.Red; }
                 else
                 {
-                    
-                    Turno = 1;
+                    JugadorP.BackColor = Color.Blue; JugadorP2.BackColor = Color.Transparent;
                 }
-                if (matrz[0, 1] == 15) { panel2.Visible = true; panel2.BackColor = Color.DarkBlue; Turno = 0; P1Score++; j1.Text = string.Format("Jugador 1:{0}", P1Score); }
-            }
-            if (Turno == 1) { JugadorP.BackColor = Color.Transparent; JugadorP2.BackColor = Color.Red; }
-            else
-            {
-                JugadorP.BackColor = Color.Blue; JugadorP2.BackColor = Color.Transparent;
-            }
-        }
+            } 
         private void button4_Click(object sender, EventArgs e)
         {
             matrz[0, 0] = matrz[0, 0] + 4;

@@ -19,29 +19,20 @@ namespace Proyecto1._0
             scores();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void iniciarSopa_Click(object sender, EventArgs e)
         {
             SopaL SopaL = new SopaL();
             SopaL.Show();
         }
+         
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void iniciarTmb_Click(object sender, EventArgs e)
         {
             Timbiriche Form2 = new Timbiriche();
             Form2.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void iniciarLot_Click(object sender, EventArgs e)
         {
            
             Loteria Loteria = new Loteria();
@@ -62,10 +53,6 @@ namespace Proyecto1._0
             label12.Text = line[10];
 
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-     
-        }
+
     }
 }
