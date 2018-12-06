@@ -738,6 +738,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Timbiriche";
             this.Text = "Timbiriche";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Timbiriche_FormClosing);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

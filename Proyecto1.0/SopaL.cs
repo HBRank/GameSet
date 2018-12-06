@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,10 +43,6 @@ namespace Proyecto1._0
             Sopa.ColumnCount = 20;
             Palabras = AsignarPalabras();
 
-
-
-
-
             for (int f = 0; f < Sopa.RowCount; f++)
             {
                 for (int c = 0; c < Sopa.ColumnCount; c++)
@@ -55,6 +54,11 @@ namespace Proyecto1._0
 
                 }
             }
+
+
+
+
+
 
             for (int f = 0; f < Sopa.RowCount; f++)
             {
@@ -93,21 +97,15 @@ namespace Proyecto1._0
             int col=0;
             for (z = 0; z < 5; z++)
             {
-
-
                 int distancia = 0;
-              
                 line = File.ReadAllLines(@"c:\lul\test.txt")[z];
-
                 myChar = line.ToCharArray();
-
                 s = Convert.ToInt32(myChar.Length);
                 distancia = 20 - s;
                 fil = Convert.ToInt32(fi.Next(0, distancia));
                 col = Convert.ToInt32(co.Next(0, 19));
                 int col1= col;
                 int fil1 = fil;
-
                 for (int cont = 0; cont < s; cont++)
                 {
                     if (SopaS[fil1, col1] != default(char))
@@ -345,6 +343,12 @@ namespace Proyecto1._0
         {
             InstruccionesSopa instruccionesSopa = new InstruccionesSopa();
             instruccionesSopa.Show();
+        }
+
+        private void SopaL_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Inicio main = new Inicio();
+            main.Show();
         }
     }
 }

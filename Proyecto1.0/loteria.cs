@@ -1,4 +1,7 @@
-﻿using System;
+﻿/**
+ *
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,24 +42,20 @@ namespace Proyecto1._0
                 while (lista.Contains(carta[j])) { carta[j] = alea.Next(1,54); }
                 lista.Add(carta[j]);                  
             }
-            for (int j = 1; j < 17; j++)
+            for (int j = 1; j < 17; j++)//Añade los paneles a una lista
             {
                 panel.Add((Panel)Controls.Find("panel" + j, true)[0]);
 
             }
-            for (int j = 0; j <16; j++)
+            for (int j = 0; j <32; j++)//añade los PictureBox a una lista
             {
                 
                    ListaP1.Add((PictureBox)Controls.Find("pictureBox"+j ,true)[0]);
                 ListaP1[j].Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[j]));
             }
-            for (int j = 16; j < 32; j++)
-            {
-                ListaP1.Add((PictureBox)Controls.Find("pictureBox" + j, true)[0]);
-                ListaP1[j].Image = Image.FromFile(string.Format("carta ({0}).jpg", carta[j]));
-            }
+
            
-            lista.Clear();
+            lista.Clear();//limpia la lista de numeros  
 
         }
         //precion de botton para que el juego inicie con la baraja.
@@ -64,7 +63,7 @@ namespace Proyecto1._0
         {
             timer1.Enabled = true;
         }
-        public int writeScore(int a)
+        public int writeScore(int a)//Metodo para escribir la puntuacion en una archivo 
         {
             string line = File.ReadAllLines("scores.txt")[a];
             int sc = Convert.ToInt32(line);
@@ -76,7 +75,7 @@ namespace Proyecto1._0
             {
                 allString += lines[i]+"\n";
             }
-            File.WriteAllText("scores.txt",allString);
+            File.WriteAllText("scores.txt",allString);  
             return 0;
         }
         //temporizador para que cada carta salga en determinado tiempo 
@@ -89,10 +88,10 @@ namespace Proyecto1._0
                
                    num = Convert.ToInt32(alea.Next(1, 52));
                     while (lista.Contains(num)) { num = Convert.ToInt32(alea.Next(1, 54)); }
-                    lista.Add(num);
-          
-     
-                    baraja1.Image = Image.FromFile(string.Format("carta ({0}).jpg",num));
+                    lista.Add(num);//añade la variable num a la lista para que no se repita el mismo numero
+
+
+            baraja1.Image = Image.FromFile(string.Format("carta ({0}).jpg",num));
            int g = 0;
            for(int j = 16; j < 32   ; j++)//cilco para verificar si la carta que esta siendo mostrada esta en las cartas del cpu
             {
@@ -106,21 +105,22 @@ namespace Proyecto1._0
             }
             l++;
             if (l == 54) { timer1.Enabled = false; }//Condicional para detener el timer cuando las cartas acaben.
-            if (scoreCPU == 16)//Condicional para saber si algun jugador a ganado.
+            if (scoreCPU == 15)//Condicional para saber si algun jugador a ganado.
             {
-                timer1.Enabled = false;
+            
                 MessageBox.Show("Ganador: CPU");
-                this.Close();
+                
                 timer1.Enabled = false;
 
             }
             if (scorep==16)
             {
-               
-                MessageBox.Show("Ganador: Jugador");
-                this.Close();
-                writeScore(3);
                 timer1.Enabled = false;
+                MessageBox.Show("Ganador: Jugador");
+    
+                
+                writeScore(3);
+                
             }
         }
         //presionar sobre la imagen para especificar que esta esta correcta.
@@ -263,6 +263,12 @@ namespace Proyecto1._0
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Loteria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Inicio main = new Inicio();
+            main.Show();
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)

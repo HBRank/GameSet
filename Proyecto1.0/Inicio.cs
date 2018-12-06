@@ -23,6 +23,7 @@ namespace Proyecto1._0
         {
             SopaL SopaL = new SopaL();
             SopaL.Show();
+            this.Close();
         }
          
 
@@ -30,6 +31,7 @@ namespace Proyecto1._0
         {
             Timbiriche Form2 = new Timbiriche();
             Form2.Show();
+            this.Close();
         }
 
         private void iniciarLot_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace Proyecto1._0
            
             Loteria Loteria = new Loteria();
             Loteria.Show();
+            this.Close();
         }
         public void scores()
         {
@@ -54,5 +57,9 @@ namespace Proyecto1._0
 
         }
 
+        private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+        }
     }
 }

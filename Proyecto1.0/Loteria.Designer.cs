@@ -953,6 +953,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Loteria";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Loteria_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.baraja1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();

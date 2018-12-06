@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +21,7 @@ namespace Proyecto1._0
 
         int[,] matrz = new int[3, 3];//Matriz que representa los cuadros del juego
                
-        int P1Score= 0,P2Score=0;
+        int P1Score= 0,P2Score=0;//avriables que guardan los puntajes de cada jugador.
         public Timbiriche()
         {
 
@@ -37,7 +40,7 @@ namespace Proyecto1._0
             matrz[0, 0] = matrz[0, 0] + 1;//Se le suma uno a la arista superior
             if (Turno == 1)
             {      
-                button1.BackColor = Color.Black;//Cambuia el color del vboton cuando es pulsado
+                button1.BackColor = Color.Black;//Cambuia el color del boton cuando es pulsado
                 if (matrz[0, 0] == 15) { panel1.Visible = true; panel1.BackColor = Color.DarkRed; P2Score++; label1.Text = string.Format("Jugador 2:{0}", P2Score); }//Pone visible el panel y cambiel color dependiedo del jugador
                 else
                 {
@@ -759,6 +762,12 @@ namespace Proyecto1._0
             }
             File.WriteAllText("scores.txt", allString);
             this.Close();
+        }
+
+        private void Timbiriche_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Inicio main = new Inicio();
+            main.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)

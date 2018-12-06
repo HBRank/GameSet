@@ -1,11 +1,11 @@
 Scores:
 
 Loteria:
-0
+8
 Sopa de Letras:
-0
+7
 Timbiriche:
 p1:
-1
+12
 p2:
-2
+14

@@ -16,7 +16,9 @@ namespace Proyecto1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Inicio main = new Inicio();
+            main.Show();
+            Application.Run();
         }
     }
 }
